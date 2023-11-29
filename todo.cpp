@@ -71,9 +71,27 @@ void print(todo s) {
     cout << "\n\tTask is : " << s.task;
 }
 
-
-
 // readData function
+void readData() {
+    system("cls");
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t                       WELCOME! List Your To-Do                       "<<endl;
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl<<endl<<endl;
+    
+    todo todo;
+    ifstream read;
+    read.open("todo.txt");
+    cout << "\n\t------------------Your current Tasks in the list--------------------";
+    
+    // while we dont reach the end of file keep on printing the data on screen
+    while (!read.eof()) {
+        read >> todo.id;
+        read.ignore();
+        getline(read, todo.task);
+        print(todo);
+    }
+    read.close();
+}
 // searchData function
 // deleteData function
 // updateData function
