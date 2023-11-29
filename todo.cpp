@@ -65,10 +65,14 @@ void addToDo() {
     }
 }
 
-
-
-
 // printToDo function
+void print(todo s) {
+    cout << "\n\tID is : " << s.id;
+    cout << "\n\tTask is : " << s.task;
+}
+
+
+
 // readData function
 // searchData function
 // deleteData function
