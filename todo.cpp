@@ -84,7 +84,7 @@ void readData() {
     cout << "\n\t------------------Your current Tasks in the list--------------------";
     
     // while we dont reach the end of file keep on printing the data on screen
-    while (!read.eof()) {
+    while(!read.eof()) {
         read >> todo.id;
         read.ignore();
         getline(read, todo.task);
