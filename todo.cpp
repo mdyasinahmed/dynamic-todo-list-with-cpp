@@ -25,6 +25,57 @@ struct todo {
     string task;
 };
 
+// addToDo function
+void addToDo() {
+    system("cls");
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t                       WELCOME! List Your To-Do                       "<<endl;
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl<<endl<<endl;
+    
+    todo todo;
+
+    cout << "\n\tEnter new task: ";
+    cin.get();
+    getline(cin, todo.task); //get user input
+    ID++; //increment id for the current task
+
+    //write task to todo.txt
+    ofstream write;
+    write.open("todo.txt", ios::app);
+    write << "\n" << ID;
+    write << "\n" << todo.task ;
+    write.close();
+
+    //write the id to a new file
+    write.open("id.txt");
+    write << ID;
+    write.close();
+
+    char ch;
+    cout<<"Do you want to add more task? y/n"<<endl;
+    cin>> ch;
+
+    //if wants to add a new task again
+    if(ch == 'y') {
+        addToDo();
+    }
+    else {
+        cout << "\n\tTask has been added successfully";
+        return;
+    }
+}
+
+
+
+
+// printToDo function
+// readData function
+// searchData function
+// deleteData function
+// updateData function
+
+
+
 // main function
 int main() {
     
