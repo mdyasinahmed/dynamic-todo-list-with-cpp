@@ -206,8 +206,13 @@ void updateData() {
 
 // main function
 int main() {
+    system("cls");
+	system("Color 1F");
+    system("title YASIN's To-Do");
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t                       WELCOME! List Your To-Do                       "<<endl;
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl<<endl<<endl;
     
-
 
     return 0;
 }
