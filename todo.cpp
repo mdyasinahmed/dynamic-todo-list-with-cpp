@@ -158,7 +158,50 @@ void deleteData() {
 }
 
 // updateData function
+void updateData() {
+    system("cls");
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t                       WELCOME! List Your To-Do                       "<<endl;
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl<<endl<<endl;
+    
+    int id = searchData();
+    cout << "\n\tYou want to update this task (y/n) : ";
+    char choice;
+    cin >> choice;
 
+    if(choice == 'y') {
+        todo newData;
+        cout << "\n\tEnter todo task : ";
+        cin.get();
+        getline(cin, newData.task);
+
+        todo todo;
+        ofstream tempFile;
+        tempFile.open("temp.txt");
+        ifstream read;
+        read.open("todo.txt");
+
+        while(!read.eof()) {
+            read >> todo.id;
+            read.ignore();
+            getline(read, todo.task);
+            if(todo.id != id) {
+                tempFile << "\n" << todo.id;
+                tempFile << "\n" << todo.task;
+            } else {
+                tempFile << "\n"<< todo.id;
+                tempFile << "\n"<< newData.task;
+            }
+        }
+        read.close();
+        tempFile.close();
+        remove("todo.txt");
+        rename("temp.txt", "todo.txt");
+        cout << "\n\tTask updated successfully";
+    } else {
+        cout << "\n\tRecord not deleted";
+    }
+}
 
 
 // main function
