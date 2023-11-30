@@ -55,7 +55,7 @@ void addToDo() {
     write.close();
 
     char ch;
-    cout<<"Do you want to add more task? y/n"<<endl;
+    cout<<"\t\t\tDo you want to add more task? y/n: ";
     cin>> ch;
 
     //if wants to add a new task again
@@ -63,7 +63,7 @@ void addToDo() {
         addToDo();
     }
     else {
-        cout << "\n\tTask has been added successfully";
+        cout << "\n\t\t\tTask has been added successfully";
         return;
     }
 }
@@ -106,7 +106,7 @@ int searchData() {
     cout << endl << endl;
     
     int id;
-    cout << "\n\tEnter task id: ";
+    cout << "\n\t\t\tEnter task id: ";
     cin >> id;
     cout << "\n\n\n";
 
@@ -134,7 +134,7 @@ void deleteData() {
     cout << endl << endl;
     
     int id = searchData();
-    cout << "\n\tDo you want to delete this task (y/n) : ";
+    cout << "\n\t\t\tDo you want to delete this task (y/n) : ";
     char choice;
     cin >> choice;
 
@@ -159,9 +159,9 @@ void deleteData() {
 
         remove("todo.txt");
         rename("temp.txt", "todo.txt");
-        cout << "\n\tTask deleted Successfully";
+        cout << "\n\t\t\tTask deleted Successfully";
     } else {
-        cout << "\n\tTask not deleted";
+        cout << "\n\t\t\tTask not deleted";
     }
 }
 
@@ -175,13 +175,13 @@ void updateData() {
     cout << endl << endl;
     
     int id = searchData();
-    cout << "\n\tYou want to update this task (y/n) : ";
+    cout << "\n\t\t\tYou want to update this task (y/n) : ";
     char choice;
     cin >> choice;
 
     if(choice == 'y') {
         todo newData;
-        cout << "\n\tEnter todo task : ";
+        cout << "\n\t\t\tEnter todo task : ";
         cin.get();
         getline(cin, newData.task);
 
@@ -207,9 +207,9 @@ void updateData() {
         tempFile.close();
         remove("todo.txt");
         rename("temp.txt", "todo.txt");
-        cout << "\n\tTask updated successfully";
+        cout << "\n\t\t\tTask updated successfully";
     } else {
-        cout << "\n\tTask not deleted";
+        cout << "\n\t\t\tTask not deleted";
     }
 }
 
