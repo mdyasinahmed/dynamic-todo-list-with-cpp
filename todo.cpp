@@ -213,6 +213,17 @@ int main() {
 	cout<<"\t\t\t                       WELCOME! List Your To-Do                       "<<endl;
     cout<<"\t\t\t-----------------------------------------------------------------------"<<endl<<endl<<endl;
     
+    ifstream read;
+    read.open("id.txt");
+    if(!read.fail()) {
+        read >> ID;
+    } else {
+        ID = 0;
+    }
+
+    read.close();
+
+
 
     return 0;
 }
