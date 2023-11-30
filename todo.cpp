@@ -230,7 +230,28 @@ int main() {
         cout << "\n\t4. Delete Tasks" << endl;
         cout << "\n\t5. Update Tasks" << endl;
 
+        int choice;
+        cout << "\n\tEnter choice : ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            addToDo();
+            break;
+        case 2:
+            readData();
+            break;
+        case 3:
+            searchData();
+            break;
+        case 4:
+            deleteData();
+            break;
+        case 5:
+            updateData();
+            break;
+        }
     }
 
+    cout << endl << endl;
     return 0;
 }
