@@ -36,8 +36,8 @@ void addToDo() {
 
     cout << "\n\tEnter new task: ";
     cin.get();
-    getline(cin, todo.task); //get user input
-    ID++; //increment id for the current task
+    getline(cin, todo.task);
+    ID++; 
 
     //write task to todo.txt
     ofstream write;
@@ -83,7 +83,6 @@ void readData() {
     read.open("todo.txt");
     cout << "\n\t------------------Your current Tasks in the list--------------------";
     
-    // while we dont reach the end of file keep on printing the data on screen
     while(!read.eof()) {
         read >> todo.id;
         read.ignore();
@@ -93,6 +92,31 @@ void readData() {
     read.close();
 }
 // searchData function
+int searchData() {
+    system("cls");
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl;
+	cout<<"\t\t\t                       WELCOME! List Your To-Do                       "<<endl;
+    cout<<"\t\t\t-----------------------------------------------------------------------"<<endl<<endl<<endl;
+    
+    int id;
+    cout << "\n\tEnter task id: ";
+    cin >> id;
+    cout << "\n\n\n";
+
+    todo todo;
+    ifstream read;
+    read.open("todo.txt");
+
+    while(!read.eof()) {
+        read >> todo.id;
+        read.ignore();
+        getline(read, todo.task);
+        if (todo.id == id) {
+            print(todo);
+            return id;
+        }
+    }
+}
 // deleteData function
 // updateData function
 
