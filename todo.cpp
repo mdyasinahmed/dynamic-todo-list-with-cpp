@@ -220,10 +220,17 @@ int main() {
     } else {
         ID = 0;
     }
-
     read.close();
 
+    while(true) {
+        cout<<endl<<endl;
+        cout << "\n\t1. Add Tasks" << endl;
+        cout << "\n\t2. See Tasks" << endl;
+        cout << "\n\t3. Search Tasks" << endl;
+        cout << "\n\t4. Delete Tasks" << endl;
+        cout << "\n\t5. Update Tasks" << endl;
 
+    }
 
     return 0;
 }
