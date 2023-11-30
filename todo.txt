@@ -7,9 +7,9 @@ Solving Algo Lab Contest Problems
 Submit Algo Lab Assignment
 4
 Collect Admit Card
-5
-Submit Project
 6
 Pay Vistity Tuition Fee
 7
 Buy Notes
+8
+Collect PDF books

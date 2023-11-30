@@ -175,41 +175,32 @@ void updateData() {
     cout << endl << endl;
     
     int id = searchData();
-    cout << "\n\t\t\tYou want to update this task (y/n) : ";
+    cout << "\n\t\t\t\tDo you want to delete this task (y/n) : ";
     char choice;
     cin >> choice;
-
-    if(choice == 'y') {
-        todo newData;
-        cout << "\n\t\t\tEnter todo task : ";
-        cin.get();
-        getline(cin, newData.task);
-
+    if (choice == 'y') {
         todo todo;
         ofstream tempFile;
         tempFile.open("temp.txt");
         ifstream read;
         read.open("todo.txt");
-
-        while(!read.eof()) {
+        while (!read.eof()) {
             read >> todo.id;
             read.ignore();
             getline(read, todo.task);
-            if(todo.id != id) {
-                tempFile << endl << todo.id;
-                tempFile << endl << todo.task;
-            } else {
-                tempFile << endl << todo.id;
-                tempFile << endl << newData.task;
+            if (todo.id != id) {
+                tempFile << "\n" << todo.id;
+                tempFile << "\n" << todo.task;
             }
         }
         read.close();
         tempFile.close();
         remove("todo.txt");
         rename("temp.txt", "todo.txt");
-        cout << "\n\t\t\tTask updated successfully";
-    } else {
-        cout << "\n\t\t\tTask not deleted";
+        cout << "\n\t\t\tTask deleted successfuly";
+    }
+    else {
+        cout << "\n\t\t\tRecord not deleted";
     }
 }
 
